@@ -29,6 +29,9 @@ jobs:
       run: npm install
       
     - name: Building the Application
+      env:
+        API_URI: ${{ secrets.API_URI }}
+        STATIC_URL: ${{ secrets.STATIC_URL }}
       run: npm run build
     
     - name: Upload to S3
